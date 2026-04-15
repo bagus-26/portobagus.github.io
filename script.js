@@ -106,3 +106,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// ===========================
+// SCROLL REVEAL (IntersectionObserver)
+// ===========================
+const revealElements = document.querySelectorAll("section, article, .sosmed-item");
+
+revealElements.forEach(el => {
+    el.classList.add("reveal");
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -40px 0px"
+});
+
+revealElements.forEach(el => observer.observe(el));
+
