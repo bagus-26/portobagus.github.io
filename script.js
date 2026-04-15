@@ -1,3 +1,23 @@
+// ===========================
+// HAMBURGER MENU TOGGLE
+// ===========================
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+// Tutup menu saat klik link
+navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    });
+});
+
+// ===========================
+// FORM HANDLING
+// ===========================
 const form = document.getElementById("formPendaftaran");
 const notif = document.getElementById("notif");
 
@@ -12,7 +32,7 @@ const listData = document.getElementById("listData");
 
 
 // =========================
-// 🔹 PREVIEW INPUT (input event)
+// PREVIEW INPUT (input event)
 // =========================
 nama.addEventListener("input", () => {
     preview.innerHTML = `<p>Halo, <b>${nama.value}</b></p>`;
@@ -20,7 +40,7 @@ nama.addEventListener("input", () => {
 
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault(); // biar ga refresh
+    e.preventDefault();
 
     let error = "";
 
@@ -34,7 +54,7 @@ form.addEventListener("submit", (e) => {
         error = "No HP harus angka dan minimal 10 digit!";
     }
 
-    // VALIDASI EMAIL sederhana
+    // VALIDASI EMAIL
     else if (!email.value.includes("@")) {
         error = "Format email tidak valid!";
     }
@@ -45,15 +65,14 @@ form.addEventListener("submit", (e) => {
     }
 
     if (error !== "") {
-        notif.innerHTML = `<p style="color:red;">❌ ${error}</p>`;
+        notif.innerHTML = `<p style="color:#e94560;">❌ ${error}</p>`;
         return;
     }
 
-    notif.innerHTML = `<p style="color:green;">✅ Data berhasil dikirim!</p>`;
+    notif.innerHTML = `<p style="color:#38a169;">✅ Data berhasil dikirim!</p>`;
 
     // =========================
-    //  DOM MANIPULATION
-    // tambah ke list
+    // DOM MANIPULATION
     // =========================
     const li = document.createElement("li");
     li.innerHTML = `
@@ -72,3 +91,18 @@ notif.addEventListener("click", () => {
     notif.innerHTML = "";
 });
 
+// ===========================
+// SMOOTH SCROLL
+// ===========================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    });
+});
