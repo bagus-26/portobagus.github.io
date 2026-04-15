@@ -129,3 +129,32 @@ const observer = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => observer.observe(el));
 
+// ===========================
+// BACK TO TOP + NAVBAR SCROLL
+// ===========================
+const backToTop = document.getElementById("backToTop");
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+    // Back to top visibility
+    if (window.scrollY > 300) {
+        backToTop.classList.add("show");
+    } else {
+        backToTop.classList.remove("show");
+    }
+
+    // Navbar shadow on scroll
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
