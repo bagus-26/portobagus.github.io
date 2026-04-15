@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LK04</title>
+    <title>Tugas LK4</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -32,7 +33,7 @@
 
     <!-- HERO (biar foto tetap ada) -->
     <section class="hero">
-        <img src="/img/profile-image.jpg" alt="Profile Image">
+        <img src="./img/profile-image.jpg" alt="Foto Bagus Artandyo W">
         <p>UI/UX Designer & Frontend Developer</p>
     </section>
 
@@ -59,7 +60,7 @@
                 <article>
                     <h3>UI/UX</h3>
                     <ul>
-                        <li>Figma</li>
+                        <li>Wireframing (Figma)</li>
                         <li>Prototyping</li>
                         <li>User Flow</li>
                         <li>UX Research</li>
@@ -93,18 +94,19 @@
 
             <div class="project-container">
                 <article>
-                    <h3>SIM - RS</h3>
-                    <p>Aplikasi manajemen Rumah sakit</p>
+                    <h3>AyumaCare</h3>
+                    <p>Aplikasi pemantauan kesehatan ibu dan anak.</p>
                 </article>
 
                 <article>
-                    <h3>Web Polkisma</h3>
-                    <p>Siakad kampus fiktif buatan saya di semester 3.</p>
+                    <h3>Web UNSU</h3>
+                    <p>Landing page informasi pendaftaran mahasiswa baru.</p>
                 </article>
 
                 <article>
-                    <h3>Portofolio</h3>
-                    <p>Website portofolio pribadi yang sedang Anda lihat ini.</p>
+                    <h3>Binova</h3>
+                    <p>Aplikasi pengelolaan sampah berbasis Android.</p>
+                </article>
             </div>
         </section>
 
@@ -117,33 +119,71 @@
             </article>
         </section>
 
+        <!-- Sosial Media -->
+        <section id="sosial-media">
+            <h2>Sosial Media</h2>
+            <div class="sosmed-container">
+                <a href="https://linkedin.com" target="_blank" class="sosmed-item linkedin">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com" target="_blank" class="sosmed-item github">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="sosmed-item instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="sosmed-item twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <span>Twitter / X</span>
+                </a>
+                <a href="https://youtube.com" target="_blank" class="sosmed-item youtube">
+                    <i class="fa-brands fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+            </div>
+        </section>
+
         <!-- Form -->
+
+
         <section id="form">
             <h2>Form Pendaftaran</h2>
 
-            <form>
+            <form id="formPendaftaran">
                 <label>Nama:</label>
-                <input type="text" required>
+                <input type="text" id="nama" required>
 
                 <label>Email:</label>
-                <input type="email" required>
+                <input type="email" id="email" required>
 
                 <label>No HP:</label>
-                <input type="tel" required>
+                <input type="tel" id="hp" required>
 
                 <label>Kategori:</label>
-                <select required>
-                    <option>-- Pilih --</option>
+                <select id="kategori" required>
+                    <option value="">-- Pilih --</option>
                     <option>Web Development</option>
                     <option>Desain</option>
                     <option>Konsultasi</option>
                 </select>
 
                 <label>Pesan:</label>
-                <textarea rows="4"></textarea>
+                <textarea id="pesan" rows="4"></textarea>
 
                 <button type="submit">Kirim</button>
             </form>
+
+            <!-- Preview -->
+            <div id="preview"></div>
+
+            <!-- Hasil submit -->
+            <ul id="listData"></ul>
+
+            <!-- NOTIF -->
+            <div id="notif"></div>
         </section>
 
 
@@ -155,6 +195,7 @@
         <p>&copy; 2026 Bagus Artandyo W</p>
     </footer>
 
+    <script src="script.js" defer></script>
 </body>
 
 </html>

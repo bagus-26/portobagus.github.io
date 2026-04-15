@@ -111,6 +111,88 @@ ul {
   gap: 15px;
 }
 
+/* ================= */
+/* SOSIAL MEDIA */
+/* ================= */
+.sosmed-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.sosmed-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.sosmed-item i {
+  font-size: 32px;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.sosmed-item span {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.sosmed-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Warna brand saat hover */
+.sosmed-item.linkedin:hover {
+  color: #0077b5;
+}
+
+.sosmed-item.linkedin:hover i {
+  color: #0077b5;
+}
+
+.sosmed-item.github:hover {
+  color: #333;
+}
+
+.sosmed-item.github:hover i {
+  color: #333;
+}
+
+.sosmed-item.instagram:hover {
+  color: #e4405f;
+}
+
+.sosmed-item.instagram:hover i {
+  color: #e4405f;
+}
+
+.sosmed-item.twitter:hover {
+  color: #000;
+}
+
+.sosmed-item.twitter:hover i {
+  color: #000;
+}
+
+.sosmed-item.youtube:hover {
+  color: #ff0000;
+}
+
+.sosmed-item.youtube:hover i {
+  color: #ff0000;
+}
+
 /* FORM */
 form {
   background: white;
@@ -174,6 +256,7 @@ footer {
 
 /* MOBILE */
 @media (max-width: 480px) {
+
   .skill-container,
   .project-container {
     grid-template-columns: 1fr;
