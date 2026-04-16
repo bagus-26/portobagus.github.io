@@ -160,18 +160,18 @@
         <section id="form">
             <h2>Form Pendaftaran</h2>
 
-            <form id="formPendaftaran"  form action="https://formspree.io/f/mgorojza" method="POST">
+<form id="formPendaftaran" action="https://formspree.io/f/mgorojza" method="POST">
                 <label>Nama:</label>
-                <input type="text" id="nama" required>
+                <input type="text" id="nama" name="nama" required>
 
                 <label>Email:</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email" name="email" required>
 
                 <label>No HP:</label>
-                <input type="tel" id="hp" required>
+                <input type="tel" id="hp" name="hp" required>
 
                 <label>Kategori:</label>
-                <select id="kategori" required>
+                <select id="kategori" name="kategori" required>
                     <option value="">-- Pilih --</option>
                     <option>Web Development</option>
                     <option>Desain</option>
@@ -179,7 +179,7 @@
                 </select>
 
                 <label>Pesan:</label>
-                <textarea id="pesan" rows="4"></textarea>
+                <textarea id="pesan" name="pesan" rows="4"></textarea>
 
                 <button type="submit">Kirim</button>
             </form>

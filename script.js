@@ -69,18 +69,7 @@ form.addEventListener("submit", (e) => {
         return;
     }
 
-    notif.innerHTML = `<p style="color:#38a169;">✅ Data berhasil dikirim!</p>`;
-
-    // =========================
-    // DOM MANIPULATION
-    // =========================
-    const li = document.createElement("li");
-    li.innerHTML = `
-    <b>${nama.value}</b> - ${kategori.value} <br>
-    ${email.value} | ${hp.value}
-  `;
-
-    listData.appendChild(li);
+    notif.innerHTML = `<p style="color:#38a169;">✅ Data berhasil dikirim!</p>`;\n\n    // Send to Formspree\n    const formData = new FormData(form);\n    fetch('https://formspree.io/f/mgorojza', {\n      method: 'POST',\n      body: formData\n    })\n    .then(response => {\n      if (!response.ok) {\n        throw new Error('Network response not ok');\n      }\n    })\n    .catch(error => {\n      console.error('Formspree error:', error);\n      notif.innerHTML += ' | <span style="color:#e94560;">❌ Gagal kirim server</span>';\n    });\n\n    // =========================\n    // DOM MANIPULATION\n    // =========================\n    const li = document.createElement("li");\n    li.innerHTML = `\n    <b>${nama.value}</b> - ${kategori.value} <br>\n    ${email.value} | ${hp.value}\n  `;\n\n    listData.appendChild(li);
 
     // RESET FORM
     form.reset();
